@@ -19,6 +19,8 @@ body {
 
 .bg-dark {
   background-color: #12002b;
+  min-height: calc(100vh - 150px);
+  padding: 1px 0
 }
 
 .sr-only {
@@ -71,7 +73,7 @@ body {
 }
 
 .hero {
-  background-image: url('../img/bank-tree.jpeg');
+  background-image: url('../public/bank-tree.jpeg');
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -289,3 +291,5 @@ body {
     width: 200px;
   }
 }
+
+

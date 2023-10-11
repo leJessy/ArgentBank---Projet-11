@@ -10,7 +10,7 @@ function Header() {
               to="./">
                 <img 
                   className='main-nav-logo-image'
-                  src="argentBankLogo.png" 
+                  src="argentBankLogo.webp" 
                   alt="Logo Argent Bank" />
                 <h1 className='sr-only'>Argent Bank</h1>
             </Link>

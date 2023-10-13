@@ -1,10 +1,10 @@
 import './main.css';
-import { Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from "./layout/Header"
-import Home from "./pages/Home/Home.jsx"
+import Home from "./pages/Home.jsx"
 import Footer from "./layout/Footer"
-import Signin from "./pages/Signin/Signin"
-import User from "./pages/User/User"
+import Signin from "./pages/Signin"
+import User from "./pages/User"
 
 function App() {
   return (

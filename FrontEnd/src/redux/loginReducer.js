@@ -15,10 +15,17 @@ const initialState = {
             token: action.payload.token,
           },
         };
+        case 'LOGOUT_USER':
+          return {
+            ...state,
+            user: {
+              isAuthenticated: false,
+              token: null,
+            },
+          };
       default:
         return state;
     }
   };
   
   export default loginReducer;
-  

@@ -30,7 +30,7 @@ function Header() {
             &nbsp;Jessy
           </Link>
           <Link className='main-nav-item' to='/' onClick={handleLogout}>
-          <i className='fa-solid fa-house'></i>
+          <i className='fa-solid fa-right-from-bracket'></i>
             &nbsp;Logout
           </Link>
         </>

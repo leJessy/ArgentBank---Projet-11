@@ -9,10 +9,11 @@ const Signin = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = async () => {
     if (!username || !password) {
-      console.error('Merci de remplir les champs username et password');
+      setErrorMessage('Merci de remplir les champs username et password');
       return;
     }
     try {
@@ -59,6 +60,7 @@ const Signin = () => {
             Sign In
           </button>
         </form>
+        {errorMessage && <div className='error-message'>{errorMessage}</div>}
       </section>
     </main>
   );

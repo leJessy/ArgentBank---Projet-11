@@ -292,4 +292,9 @@ body {
   }
 }
 
-
+.error-message {
+  background-color: red;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
+}

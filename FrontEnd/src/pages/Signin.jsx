@@ -7,13 +7,13 @@ const Signin = () => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = async () => {
-    if (!username || !password) {
-      setErrorMessage('Merci de remplir les champs username et password');
+    if (!email || !password) {
+      setErrorMessage('Merci de remplir les champs email et password');
       return;
     }
     try {
@@ -22,7 +22,7 @@ const Signin = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userName: username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       if (!response.ok) {
@@ -39,6 +39,7 @@ const Signin = () => {
       navigate('/User');
     } catch (error) {
       console.error('Login failed:', error);
+      setErrorMessage('Erreur lors de la connexion, veuillez réessayer.');
     }
   };
 
@@ -49,8 +50,8 @@ const Signin = () => {
         <h1>Sign In</h1>
         <form>
           <div className='input-wrapper'>
-            <label htmlFor="username">Username</label>
-            <input type="text" id='username' value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label htmlFor="email">Email</label>
+            <input type="text" id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className='input-wrapper'>
             <label htmlFor="password">Password</label>

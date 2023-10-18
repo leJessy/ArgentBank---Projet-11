@@ -9,6 +9,13 @@ basePath: /api/v1
 schemes:
   - http
 paths:
+  /user/{account}/transactions:
+  /user/transactions?account=12345:
+    get:
+      responses:
+        '200':
+          schema:
+            $ref: '#/definitions/TransactionsResponse'
   /user/login:
     post:
       tags:
@@ -156,3 +163,15 @@ definitions:
     properties:
       userName:
         type: string
+  TransactionsResponse:
+    type: array
+    items:
+      type: object
+      properties:
+        date: 
+          type: string
+          format: date-time
+        description:
+          type: string
+        amount:
+          type: number

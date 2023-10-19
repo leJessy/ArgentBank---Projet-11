@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 const User = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
+  const token = useSelector((state) => state.user.token);
+  console.log(token)
 
   if (!isAuthenticated) {
     // Mettre une page 404 plutôt qu'un redirect
@@ -39,7 +41,6 @@ const User = () => {
 };
 
 export default User;
-
 
 
     

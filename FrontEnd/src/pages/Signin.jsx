@@ -33,7 +33,7 @@ const Signin = () => {
 
       dispatch({
         type: 'LOGIN_SUCCESS',
-        payload: { token: data.token },
+        payload: { token: data.body.token },
       });
 
       navigate('/User');

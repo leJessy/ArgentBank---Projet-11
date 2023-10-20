@@ -45,10 +45,6 @@ const User = () => {
     }
     }, [dispatch, isAuthenticated]);
 
-  if (!isAuthenticated) {
-    return <Link to="/Sign-In">Login</Link>;
-  }
-
   return (
     <main className='main bg-dark'>
     <div className='header'>

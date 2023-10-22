@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Account from '../components/Account';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
+import Edit from "../components/Edit";
 
 const User = () => {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
@@ -9,6 +10,7 @@ const User = () => {
   const dispatch = useDispatch();
   const firstname = useSelector((state) => state.user.firstname);
   const lastname = useSelector((state) => state.user.lastname);
+  const username = useSelector((state) => state.user.username);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -43,7 +45,7 @@ const User = () => {
        fetchData();
 
     }
-    }, [dispatch, isAuthenticated]);
+    }, [dispatch, isAuthenticated, username]);
 
   return (
     <main className='main bg-dark'>
@@ -53,7 +55,7 @@ const User = () => {
         <br />
         {firstname} {lastname}!
       </h1>
-      <button className='edit-button'>Edit Name</button>
+      <Edit />
     </div>
     <h2 className='sr-only'>Accounts</h2>
     <Account 
